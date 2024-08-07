@@ -11,23 +11,23 @@ open class MonsterDropdownView: UIView,
     let dropdownButton = UIButton(type: .system)
     let tableView = UITableView()
     
-    var data = ["Content", "Content", "Content", "Content", "Content", "Content"]
+    var data: [String]
     
     var isDropdownVisible = false {
         didSet {
-            dropdownButton.setImage(isDropdownVisible ? UIImage(systemName: "arrowshape.up") : UIImage(systemName: "arrowshape.up"), for: .normal)
+            dropdownButton.setImage(isDropdownVisible ? UIImage(systemName: "chevron.up") : UIImage(systemName: "chevron.down"), for: .normal)
         }
     }
     
-    override init(frame: CGRect) {
+    public init(frame: CGRect, data: [String]) {
+        self.data = data
         super.init(frame: frame)
-        
         setupUI()
     }
     
     required public init?(coder aDecoder: NSCoder) {
+        self.data = []
         super.init(coder: aDecoder)
-        
         setupUI()
     }
     
@@ -46,7 +46,7 @@ open class MonsterDropdownView: UIView,
         
         dropdownButton.setTitle(data[0], for:.normal)
         dropdownButton.setTitleColor(.black, for:.normal)
-        dropdownButton.setImage(UIImage(systemName: "arrowshape.up"),for:.normal)
+        dropdownButton.setImage(UIImage(systemName: "chevron.up"),for:.normal)
         dropdownButton.tintColor = UIColor.black
         dropdownButton.titleLabel?.font = UIFont.systemFont(ofSize: 17.0, weight: .semibold)
 
