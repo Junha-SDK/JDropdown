@@ -50,10 +50,9 @@ open class JDropdown: UIView,
         dropdownButton.tintColor = UIColor.black
         dropdownButton.titleLabel?.font = UIFont.systemFont(ofSize: 17.0, weight: .semibold)
 
-        let spacing: CGFloat = 6
-        dropdownButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: spacing - 10)
-        dropdownButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: spacing + 10, bottom: 0, right: 0)
-
+        let spacing: CGFloat = 130
+        dropdownButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: -spacing + 10, bottom: 0, right: spacing)
+        dropdownButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: -spacing + 10)
 
         dropdownButton.semanticContentAttribute = UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft ? .forceLeftToRight : .forceRightToLeft
         
