@@ -4,7 +4,7 @@ import UIKit
 import SnapKit
 
 @available(iOS 13.0, *)
-open class MonsterDropdownView: UIView,
+open class JDropdown: UIView,
                                 UITableViewDataSource,
                                 UITableViewDelegate {
     
@@ -50,9 +50,10 @@ open class MonsterDropdownView: UIView,
         dropdownButton.tintColor = UIColor.black
         dropdownButton.titleLabel?.font = UIFont.systemFont(ofSize: 17.0, weight: .semibold)
 
-        let spacing: CGFloat = 130
-        dropdownButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: -spacing, bottom: 0, right: spacing)
-        dropdownButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right:-spacing)
+        let spacing: CGFloat = 6
+        dropdownButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: spacing - 10)
+        dropdownButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: spacing + 10, bottom: 0, right: 0)
+
 
         dropdownButton.semanticContentAttribute = UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft ? .forceLeftToRight : .forceRightToLeft
         
@@ -94,7 +95,7 @@ open class MonsterDropdownView: UIView,
     }
     
     public func tableView(_ tableView:UITableView,cellForRowAt indexPath : IndexPath)->UITableViewCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier:"cell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         
         cell.textLabel?.text = data[indexPath.row]
         cell.backgroundColor = .gray
