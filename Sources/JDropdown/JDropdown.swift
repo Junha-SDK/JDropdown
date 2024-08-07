@@ -51,8 +51,8 @@ open class JDropdown: UIView,
         dropdownButton.titleLabel?.font = UIFont.systemFont(ofSize: 17.0, weight: .semibold)
 
         let spacing: CGFloat = 130
-        dropdownButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: -spacing + 10, bottom: 0, right: spacing)
-        dropdownButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: -spacing + 10)
+        dropdownButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: -spacing + 20, bottom: 0, right: spacing)
+        dropdownButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: -spacing + 20)
 
         dropdownButton.semanticContentAttribute = UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft ? .forceLeftToRight : .forceRightToLeft
         
